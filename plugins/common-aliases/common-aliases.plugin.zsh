@@ -13,7 +13,24 @@ alias lS='ls -1FSsh'
 alias lart='ls -1Fcart'
 alias lrt='ls -1Fcrt'
 alias lsr='ls -lARFh' #Recursive list of files and directories
-alias lsn='ls -1'     #A column contains name of files and directories
+alias ls1='ls -1'     #A column contains name of files and directories
+
+alias lo='ls  -loa'
+alias lx='ls -x'
+alias lxa='lx -a'
+alias lc='ls -lLc'
+alias lu='ls -lLu'
+alias lt='ls  -lLt'
+alias lf='ls -F'
+alias le='ls -le'
+alias l@='ls -l@'
+alias ltr='ls -ltr'   
+alias lsattr='ls -la@|grep -e ".*-@ "'
+alias lss='alias|grep ls|grep "^l"|sort'
+
+function lm {
+	ls -la $* | more
+}
 
 alias zshrc='${=EDITOR} ${ZDOTDIR:-$HOME}/.zshrc' # Quick access to the .zshrc file
 
@@ -45,10 +62,6 @@ alias help='man'
 alias p='ps -f'
 alias sortnr='sort -n -r'
 alias unexport='unset'
-
-alias rm='rm -i'
-alias cp='cp -i'
-alias mv='mv -i'
 
 # zsh is able to auto-do some kungfoo
 # depends on the SUFFIX :)
@@ -88,3 +101,12 @@ fi
 
 # Make zsh know about hosts already accessed by SSH
 zstyle -e ':completion:*:(ssh|scp|sftp|rsh|rsync):hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
+
+# Shortcuts
+alias n="cd ~/NextCloud"
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias p="cd ~/Sources/Projects"
+alias cdlog='cd /var/log; ls -ltr'
+alias cdetc='cd /etc/'
+alias cds="cd $STARTDIR"
